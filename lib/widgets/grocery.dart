@@ -8,38 +8,14 @@ class Grocery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            height: 26,
-            width: 26,
-            color: groceryItem.category.color,
-          ),
-          const SizedBox(
-            width: 20,
-          ),
-          Text(
-            groceryItem.name,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.normal,
-              color: Colors.white,
-            ),
-          ),
-          Expanded(
-            child: Container(),
-          ),
-          Text(groceryItem.quantity.toString(),
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
-                color: Colors.white,
-              )),
-        ],
+    return ListTile(
+      title: Text(groceryItem.name),
+      leading: Container(
+        width: 24,
+        height: 24,
+        color: groceryItem.category.color,
       ),
+      trailing: Text(groceryItem.quantity.toString()),
     );
   }
 }
